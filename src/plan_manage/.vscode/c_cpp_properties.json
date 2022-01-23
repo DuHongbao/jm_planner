@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/devel/include/**",
+        "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/bspline/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/bspline_opt/include/**",
+        "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/src/mace_matlab_msgs/include/**",
+        "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/src/mace_matlab_node/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/Utils/multi_map_server/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/path_searching/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/plan_env/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/plan_manage/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/poly_traj/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/Utils/pose_utils/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/Utils/quadrotor_msgs/include/**",
+        "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/src/sim_gazebo_plugins/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/so3_control/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/so3_disturbance_generator/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/fast_planner/traj_utils/include/**",
+        "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/src/sim_sensors_node/include/**",
+        "/home/derek/ROS_UAV_Project/Fast-Planner-master/src/uav_simulator/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
