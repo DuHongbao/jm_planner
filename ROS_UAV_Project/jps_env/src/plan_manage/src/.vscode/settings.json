@@ -1,0 +1,12 @@
+{
+        "python.autoComplete.extraPaths": [
+                "/home/derek/ROS_UAV_Project/Fast-Planner-master/devel/lib/python2.7/dist-packages",
+                "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/devel/lib/python2.7/dist-packages",
+                "/opt/ros/melodic/lib/python2.7/dist-packages"
+        ],
+        "python.analysis.extraPaths": [
+                "/home/derek/ROS_UAV_Project/Fast-Planner-master/devel/lib/python2.7/dist-packages",
+                "/home/derek/catkin_ws/OpenMACE-0.0.2/catkin_sim_environment/devel/lib/python2.7/dist-packages",
+                "/opt/ros/melodic/lib/python2.7/dist-packages"
+        ]
+}

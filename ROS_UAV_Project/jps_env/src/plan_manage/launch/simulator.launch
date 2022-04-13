@@ -1,0 +1,56 @@
+<launch>
+
+    <arg name="odometry_topic" value="/state_ukf/odom"/>
+    <arg name="camera_pose_topic" value="/pcl_render_node/camera_pose"/>
+    <arg name="depth_topic" value="/pcl_render_node/depth"/>
+
+    <!-- topic of point cloud measurement, such as from LIDAR  -->
+    <!-- don't set camera pose and depth, if you already set this one! -->
+    <arg name="cloud_topic" value="/pcl_render_node/cloud"/>
+
+
+    <arg name="max_vel" value="3.0" />
+    <arg name="max_acc" value="2.0" />
+
+  <arg name="flight_type" value="1"/>
+
+
+  <arg name="map_size_x_" value="40.0"/>
+  <arg name="map_size_y_" value="20.0"/>
+  <arg name="map_size_z_" value=" 5.0"/>
+
+  <!-- topic of your odometry such as VIO or LIO -->
+  <arg name="odom_topic" value="/state_ukf/odom" />
+
+  <!-- main node -->
+  <node pkg="plan_manage" name="fast_planner_node" type="fast_planner_node" output="screen">
+    <remap from="/odom_world" to="$(arg odometry_topic)"/>
+    <remap from="/sdf_map/odom" to="$(arg odometry_topic)"/>
+    <remap from="/sdf_map/cloud" to="/pcl_render_node/cloud"/>
+    <!-- replanning method -->
+    <param name="planner_node/planner" value="2" type="int"/>     
+ 
+  </node>
+
+
+  <node pkg="local_sensing_node" type="pcl_render_node" name="pcl_render_node" output="screen">
+        <rosparam command="load" file="$(find local_sensing_node)/params/camera.yaml" />
+        <param name="sensing_horizon"  value="5.0" />
+        <param name="sensing_rate"     value="30.0"/>
+        <param name="estimation_rate"  value="30.0"/>
+
+        <param name="map/x_size"     value="$(arg map_size_x_)"/>
+        <param name="map/y_size"     value="$(arg map_size_y_)"/>
+        <param name="map/z_size"     value="$(arg map_size_z_)"/>
+
+        <remap from="~global_map" to="/map_generator/global_cloud"/>
+        <remap from="~odometry"   to="$(arg odometry_topic)"/>
+  </node>
+
+	<node pkg="local_corner" type="local_corner" name="local_corner" output="screen">
+        <param name="map/x_size"     value="$(arg map_size_x_)"/>
+        <param name="map/y_size"     value="$(arg map_size_y_)"/>
+        <param name="map/z_size"     value="$(arg map_size_z_)"/>
+				<param name="resolution"     value="$(arg _resolution)"/>
+  </node>
+</launch>

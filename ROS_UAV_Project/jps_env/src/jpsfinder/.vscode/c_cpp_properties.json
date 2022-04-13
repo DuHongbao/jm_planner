@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/derek/ROS_UAV_Project/jps_env/devel/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/jps_path_search/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/bspline/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/bspline_opt/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/src/DynamixelSDK/ros/dynamixel_sdk/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/corner_detector/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/src/modulation_velocity/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/Utils/multi_map_server/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/src/object_motion/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/path_searching/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/plan_env/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/plan_manage/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/poly_traj/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/Utils/pose_utils/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/Utils/quadrotor_msgs/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/so3_control/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/so3_disturbance_generator/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/so3_quadrotor_simulator/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/traj_utils/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/derek/turtlebot3_ws/turtlebot3/src/turtlebot3/turtlebot3_slam/include/**",
+        "/home/derek/ROS_UAV_Project/jps_env/src/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,17 @@
+<launch>
+  <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find plan_manage)/config/topo.rviz" />
+
+  <node pkg="plan_env" type="obj_generator" name="dynamic_obj" output="screen">
+        <param name="obj_generator/obj_num"  value="10" type="int"/>
+        <param name="obj_generator/xy_size" value="10.0"/>
+        <param name="obj_generator/h_size" value="3.0"/>
+        <param name="obj_generator/vel" value="0.5"/>
+        <param name="obj_generator/yaw_dot" value="0.5"/>
+        <param name="obj_generator/acc_r1" value="0.5"/>
+        <param name="obj_generator/acc_r2" value="0.5"/>
+        <param name="obj_generator/acc_z" value="0"/>
+        <param name="obj_generator/scale1" value="0.5"/>
+        <param name="obj_generator/scale2" value="0.5"/>
+        <param name="obj_generator/interval" value="2.5"/>
+  </node>
+</launch>
