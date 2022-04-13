@@ -195,7 +195,7 @@ void odomCallbck(const nav_msgs::Odometry& msg) {
 void visCallback(const ros::TimerEvent& e) {
   // displayTrajWithColor(traj_real_, 0.03, Eigen::Vector4d(0.925, 0.054, 0.964,
   // 1),
-  //                      1);
+  // 1);
 
   displayTrajWithColor(traj_cmd_, 0.05, Eigen::Vector4d(0, 1, 0, 1), 2);
 }

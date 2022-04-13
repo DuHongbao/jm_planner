@@ -116,7 +116,12 @@ void rcvEnvmsgCallbck(const modu_msgs::modu& env_msg){
         //cout<<"vel_cmd:"<<vel_d<<endl;
         vel_modu_d = 3*(matrixM * vel_d).normalized();
         //cout<<"vel_modu_d:"<<vel_modu_d<<endl;
-        yaw_d = atan2(goal(1), goal(0));
+
+}
+
+void cmdCallback(const ros::TimerEvent& e){
+      ros::Time time_now = ros::Time::now();
+              yaw_d = atan2(goal(1), goal(0));
         yawdot_d = 0.001*ky*(yaw - yaw_d);
         acceleration_d = 0.001*kv*(velocity - vel_d);
         cmd.header.stamp = ros::Time::now();
@@ -147,7 +152,6 @@ void rcvEnvmsgCallbck(const modu_msgs::modu& env_msg){
         cmd_pub.publish(cmd);
 }
 
-
 double Tao(Eigen::Vector3d v3,double r ){
         double dis = pow(v3[0] - 2.0,2)+pow(v3[1] - 0.0,2)
         +pow(v3[2] - 2.0,2);
@@ -161,14 +165,14 @@ int main(int argc,char** argv){
         for(int i =0; i<10; i++){
                 obs_subs[i] = nh.subscribe("/dynamic/pose_" + to_string(i), 1, rcvObsCallbck);
         }
-
+        cmd_pub = nh.advertise<quadrotor_msgs::PositionCommand>("/modu_cmd", 50);
+        event_pub = nh.advertise<std_msgs::Bool>("/Is_there_dynObs",50);
         goal_sub = nh.subscribe("/move_base_simple/goal",1,goal_callback);
         env_msg_sub = nh.subscribe("/fast_planner_node/env_msg", 1, rcvEnvmsgCallbck);
         //imu_sub = nh.subscribe();
+        ros::Timer cmd_timer = nh.createTimer(ros::Duration(0.01), cmdCallback);
 
 
-        cmd_pub = nh.advertise<quadrotor_msgs::PositionCommand>("/modu_cmd", 50);
-        event_pub = nh.advertise<std_msgs::Bool>("/Is_there_dynObs",50);
 
         ros::spin();
         return 0;
